@@ -43,7 +43,7 @@ public class Warning extends Punishment {
     }
 
     public Long getTimePlaced(DataStore ds) {
-        return ds.getLong(Tables.History.name(), "Expiry", "Time", getExpiry().toString());
+        return ds.getLong(Tables.History.name(), "Expiry", getExpiry().toString(), "Time");
     }
 
 }

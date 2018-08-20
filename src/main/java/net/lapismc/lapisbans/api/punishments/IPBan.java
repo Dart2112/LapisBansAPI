@@ -68,7 +68,7 @@ public class IPBan extends Punishment {
     @Override
     public Long getTimePlaced(DataStore ds) {
         if (isTemp()) {
-            return ds.getLong(Tables.History.name(), "Expiry", "Time", getExpiry().toString());
+            return ds.getLong(Tables.History.name(), "Expiry", getExpiry().toString(), "Time");
         } else {
             for (Long time : ds.getLongList(Tables.History.name(), "UUID", getTargetIP(), "Time")) {
                 if (ds.getString(Tables.History.name(), "Time", time.toString(), "Action").equals("IPBan")) {
