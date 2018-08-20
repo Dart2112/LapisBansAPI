@@ -45,10 +45,12 @@ public class Ban extends Punishment {
         this.isShadow = isShadow;
     }
 
+    /**
+     * @return Returns true if the ban is a shadow ban
+     */
     public boolean isShadow() {
         return isShadow;
     }
-
 
     @Override
     public Long getTimePlaced(DataStore ds) {

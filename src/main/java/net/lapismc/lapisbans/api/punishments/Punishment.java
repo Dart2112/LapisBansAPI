@@ -49,29 +49,48 @@ public abstract class Punishment {
         this.target = target;
         this.reason = reason;
         this.isTemp = isTemp;
-        this.expiry = expiry;
+        this.expiry = isTemp ? expiry : 0L;
     }
 
+    /**
+     * @return Returns the {@link UUID} of the player who has been punished
+     */
     public UUID getSource() {
         return source;
     }
 
+    /**
+     * @return Returns the UUID of the user who gave the punishment, this can be the ConsoleUUID
+     */
     public UUID getTarget() {
         return target;
     }
 
+    /**
+     * @return Returns the reason given for this punishment
+     */
     public String getReason() {
         return reason;
     }
 
+    /**
+     * @return True if the punishment has an expiry
+     */
     public boolean isTemp() {
         return isTemp;
     }
 
+    /**
+     * @return Returns the epoch milliseconds that this punishment will expire at, will be 0L if the punishment doesn't expire
+     */
     public Long getExpiry() {
         return expiry;
     }
 
+    /**
+     * @param ds The {@link DataStore} object that contains the history
+     * @return Returns the Epoch time in milliseconds of when the punishment was made
+     */
     public abstract Long getTimePlaced(DataStore ds);
 
 }

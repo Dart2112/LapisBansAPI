@@ -35,34 +35,96 @@ import net.lapismc.lapisbans.api.punishments.Ban;
 import net.lapismc.lapisbans.api.punishments.Mute;
 import net.lapismc.lapisbans.api.punishments.Warning;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface LapisBansPlayer {
 
+    /**
+     * @return Returns the {@link UUID} of the player this object represents
+     */
     UUID getUniqueId();
 
+    /**
+     * Set the IP address of the player in the LapisBans database
+     *
+     * @param ip The IP address you wish to associate with this player
+     */
     void setIPAddress(String ip);
 
+    /**
+     * @return Returns the {@link LapisBansAddress} object representing the players IP address
+     */
     LapisBansAddress getAddress();
 
+    /**
+     * @return Returns true if the player is banned
+     */
     boolean isBanned();
 
+    /**
+     * @return Returns the {@link Ban} object representing this players ban, null if the player isn't banned
+     */
     Ban getBan();
 
+    /**
+     * Ban the player
+     *
+     * @param source   The {@link UUID} of the banner
+     * @param reason   The reason for the ban
+     * @param isTemp   True if the ban is only temporary
+     * @param expiry   The Epoch milliseconds that the ban will expire at, use 0L if it is a permanent ban
+     * @param isShadow True if the player should be shadow banned
+     */
     void banPlayer(UUID source, String reason, boolean isTemp, Long expiry, boolean isShadow);
 
+    /**
+     * Remove the ban from this player
+     */
     void unBanPlayer();
 
+    /**
+     * @return Returns true if the player is currently banned
+     */
     boolean isMuted();
 
+    /**
+     * @return Returns the {@link Mute} object representing the mute, null if the player isn't muted
+     */
     Mute getMute();
 
+    /**
+     * Mute the player
+     *
+     * @param source The {@link UUID} of the muter
+     * @param reason The reason for the mute
+     * @param isTemp True if the mute is only temporary
+     * @param expiry The Epoch milliseconds that the mute will expire at, use 0L if it is a permanent mute
+     */
     void mutePlayer(UUID source, String reason, boolean isTemp, Long expiry);
 
+    /**
+     * Removed the mute from the player
+     */
     void unMutePlayer();
 
+    /**
+     * @return Returns a {@link List} of {@link Warning} that contains all of the players active warnings
+     */
+    List<Warning> getWarnings();
+
+    /**
+     * Warn the player
+     *
+     * @param source The {@link UUID} of the warner
+     * @param reason The reason for the warning
+     * @param expiry The Epoch milliseconds that the warning will expire at
+     */
     void warnPlayer(UUID source, String reason, Long expiry);
 
+    /**
+     * @param warning Remove the warning from a player
+     */
     void removeWarning(Warning warning);
 
 }

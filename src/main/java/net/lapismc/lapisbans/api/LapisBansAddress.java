@@ -38,16 +38,40 @@ import java.util.UUID;
 
 public interface LapisBansAddress {
 
+    /**
+     * @return Returns the string form of the IP address this object represents
+     */
     String getAddressString();
 
+    /**
+     * @return Returns a {@link List} of {@link LapisBansPlayer} objects that have this IP address
+     */
     List<LapisBansPlayer> getPlayers();
 
+    /**
+     * @return Returns true if this IP address is banned
+     */
     boolean isBanned();
 
+    /**
+     * @return Returns the {@link IPBan} object representing the IP ban of this IP address, Returns null if this IP isn't banned
+     */
     IPBan getBan();
 
+    /**
+     * Bans this IP address
+     *
+     * @param source   The UUID of the banner
+     * @param reason   The reason for the ban
+     * @param isTemp   True if the ban is temporary
+     * @param expiry   The Epoch milliseconds that the ban will expire at, use 0L if it is a permanent ban
+     * @param isShadow True if the ban is a shadow ban
+     */
     void banAddress(UUID source, String reason, boolean isTemp, Long expiry, boolean isShadow);
 
+    /**
+     * Remove the ban on this IP address
+     */
     void unBanAddress();
 
 

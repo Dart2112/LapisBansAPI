@@ -40,6 +40,10 @@ import java.util.UUID;
 public class LapisBansAPI {
 
     private static LapisBans plugin;
+    /**
+     * This UUID is used when console punishes someone
+     */
+    public UUID consoleUUID = UUID.nameUUIDFromBytes("Console".getBytes());
 
     /**
      * This is a constructor for LapisBans to set the plugin variable
@@ -51,17 +55,32 @@ public class LapisBansAPI {
         LapisBansAPI.plugin = plugin;
     }
 
+    /**
+     * Use this constructor to get the API
+     */
     public LapisBansAPI() {
     }
 
+    /**
+     * @param uuid The {@link UUID} of the player you wish to get
+     * @return The {@link LapisBansPlayer} object for the UUID given
+     */
     public LapisBansPlayer getPlayer(UUID uuid) {
         return plugin.getPlayer(uuid);
     }
 
+    /**
+     * @param op The {@link OfflinePlayer} or {@link org.bukkit.entity.Player} of the player you wish to get
+     * @return The {@link LapisBansPlayer} object for the {@link org.bukkit.entity.Player} given
+     */
     public LapisBansPlayer getPlayer(OfflinePlayer op) {
         return plugin.getPlayer(op);
     }
 
+    /**
+     * @param ip The String form of an IPAddress
+     * @return Returns the {@link LapisBansAddress} object for the given IP
+     */
     public LapisBansAddress getAddress(String ip) {
         return plugin.getAddress(ip);
     }

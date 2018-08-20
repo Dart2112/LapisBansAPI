@@ -47,10 +47,18 @@ public class IPBan extends Punishment {
         this.isShadow = isShadow;
     }
 
+    /**
+     * @return Returns true if the ban is a shadow ban
+     */
     public boolean isShadow() {
         return isShadow;
     }
 
+    /**
+     * This should not be used!
+     *
+     * @return Always returns null
+     */
     @Override
     @Deprecated
     public UUID getTarget() {
@@ -71,6 +79,9 @@ public class IPBan extends Punishment {
         return 0L;
     }
 
+    /**
+     * @return Returns the string form of the IP address that this ban applies to
+     */
     @SuppressWarnings("WeakerAccess")
     public String getTargetIP() {
         return target;
