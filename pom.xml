@@ -34,7 +34,7 @@
 
     <groupId>net.lapismc</groupId>
     <artifactId>LapisBansAPI</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <packaging>jar</packaging>
 
     <name>LapisBansAPI</name>
@@ -56,6 +56,7 @@
                     <sourceFileIncludes>
                         <exclude>net/lapismc/lapisbans/api/*.java</exclude>
                         <exclude>net/lapismc/lapisbans/api/punishments/*.java</exclude>
+                        <exclude>net/lapismc/lapisbans/api/events/*.java</exclude>
                     </sourceFileIncludes>
                 </configuration>
                 <executions>
