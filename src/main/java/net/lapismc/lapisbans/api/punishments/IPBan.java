@@ -70,13 +70,16 @@ public class IPBan extends Punishment {
         if (isTemp()) {
             return ds.getLong(Tables.History.name(), "Expiry", getExpiry().toString(), "Time");
         } else {
+            Long newest = 0L;
             for (Long time : ds.getLongList(Tables.History.name(), "UUID", getTargetIP(), "Time")) {
                 if (ds.getString(Tables.History.name(), "Time", time.toString(), "Action").equals("IPBan")) {
-                    return time;
+                    if (time > newest) {
+                        newest = time;
+                    }
                 }
             }
+            return newest;
         }
-        return 0L;
     }
 
     /**
