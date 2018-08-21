@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public class Kick extends Punishment {
 
-    Kick(UUID source, UUID target, String reason) {
+    public Kick(UUID source, UUID target, String reason) {
         super(source, target, reason, false, 0L);
     }
 
