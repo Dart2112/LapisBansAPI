@@ -34,7 +34,7 @@
 
     <groupId>net.lapismc</groupId>
     <artifactId>LapisBansAPI</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <packaging>jar</packaging>
 
     <name>LapisBansAPI</name>
@@ -110,7 +110,7 @@
         <dependency>
             <groupId>net.lapismc</groupId>
             <artifactId>LapisBans</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
