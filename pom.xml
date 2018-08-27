@@ -34,7 +34,7 @@
 
     <groupId>net.lapismc</groupId>
     <artifactId>LapisBansAPI</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <packaging>jar</packaging>
 
     <name>LapisBansAPI</name>
@@ -48,6 +48,19 @@
         <defaultGoal>clean install</defaultGoal>
         <finalName>${project.name}</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -110,7 +123,7 @@
         <dependency>
             <groupId>net.lapismc</groupId>
             <artifactId>LapisBans</artifactId>
-            <version>1.1.1</version>
+            <version>1.1.2</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
