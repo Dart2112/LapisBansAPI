@@ -84,6 +84,11 @@ public interface LapisBansPlayer {
     void unBanPlayer();
 
     /**
+     * @return Returns true if the player is IPBanned
+     */
+    boolean isIPBanned();
+
+    /**
      * @return Returns true if the player is currently banned
      */
     boolean isMuted();

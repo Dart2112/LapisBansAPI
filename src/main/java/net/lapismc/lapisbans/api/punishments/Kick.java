@@ -1,7 +1,7 @@
 package net.lapismc.lapisbans.api.punishments;
 
-import net.lapismc.lapisbans.playerdata.DataStore;
-import net.lapismc.lapisbans.playerdata.Tables;
+import net.lapismc.lapisbans.playerdata.datastorage.DataStore;
+import net.lapismc.lapisbans.playerdata.datastorage.Tables;
 
 import java.util.UUID;
 
