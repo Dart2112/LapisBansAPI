@@ -46,6 +46,12 @@ public interface LapisBansPlayer {
     UUID getUniqueId();
 
     /**
+     * @return Returns the name of the user from the LapisBans database, this may return null
+     */
+
+    String getName();
+
+    /**
      * Set the IP address of the player in the LapisBans database
      *
      * @param ip The IP address you wish to associate with this player
