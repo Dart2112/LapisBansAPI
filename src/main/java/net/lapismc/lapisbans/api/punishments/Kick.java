@@ -14,8 +14,8 @@ public class Kick extends Punishment {
     @Override
     public Long getTimePlaced(DataStore ds) {
         Long newest = 0L;
-        for (Long time : ds.getLongList(Tables.History.name(), "UUID", getTarget().toString(), "Time")) {
-            if (ds.getString(Tables.History.name(), "Time", time.toString(), "Action").equals("Kick")) {
+        for (Long time : ds.getLongList(Tables.History.getName(), "UUID", getTarget().toString(), "Time")) {
+            if (ds.getString(Tables.History.getName(), "Time", time.toString(), "Action").equals("Kick")) {
                 if (time > newest) {
                     newest = time;
                 }

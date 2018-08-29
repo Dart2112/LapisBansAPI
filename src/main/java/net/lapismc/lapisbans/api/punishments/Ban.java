@@ -55,11 +55,11 @@ public class Ban extends Punishment {
     @Override
     public Long getTimePlaced(DataStore ds) {
         if (isTemp()) {
-            return ds.getLong(Tables.History.name(), "Expiry", getExpiry().toString(), "Time");
+            return ds.getLong(Tables.History.getName(), "Expiry", getExpiry().toString(), "Time");
         } else {
             Long newest = 0L;
-            for (Long time : ds.getLongList(Tables.History.name(), "UUID", getTarget().toString(), "Time")) {
-                if (ds.getString(Tables.History.name(), "Time", time.toString(), "Action").equals("Ban")) {
+            for (Long time : ds.getLongList(Tables.History.getName(), "UUID", getTarget().toString(), "Time")) {
+                if (ds.getString(Tables.History.getName(), "Time", time.toString(), "Action").equals("Ban")) {
                     if (time > newest) {
                         newest = time;
                     }
