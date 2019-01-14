@@ -24,6 +24,14 @@ import java.util.UUID;
 public interface PunishmentInterface {
 
     /**
+     * Get the type of punishment that this punishment object represents
+     * e.g. Ban would return {@link PunishmentType#Ban}
+     *
+     * @return Returns the {@link PunishmentType} for this punishment
+     */
+    PunishmentType getType();
+
+    /**
      * Get the UUID of the player the punishment has been applied to
      *
      * @return Returns the UUID of the player that this punishment has been applied to
@@ -59,8 +67,8 @@ public interface PunishmentInterface {
     Long getStart();
 
     /**
-     * Creates the punishment in the database and adds it to the punishment manager
-     * Adding it to the punishment manager will implement the punishment, e.g. kicking the player if its a ban
+     * Creates the punishment in the database and adds it to the punishment manager,
+     * This may not implement the punishment in all cases (e.g. bans wont kick players but mutes will be applied when this is called)
      */
     void createPunishment();
 
