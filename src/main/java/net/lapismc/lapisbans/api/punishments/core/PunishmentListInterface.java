@@ -21,6 +21,8 @@ import java.util.List;
 
 /**
  * A class for storing a list of {@link PunishmentInterface}'s. This is required because of the way the API is structured
+ * There is no need for the user of this API to use this interface or any implementation of it, it is simply used to make
+ * converting a list of punishments to a list of {@link PunishmentInterface}'s easier
  */
 public interface PunishmentListInterface {
 

@@ -18,5 +18,8 @@ package net.lapismc.lapisbans.api.punishments.permanent;
 
 import net.lapismc.lapisbans.api.punishments.core.PunishmentInterface;
 
+/**
+ * Represents a kick
+ */
 public interface KickInterface extends PunishmentInterface {
 }

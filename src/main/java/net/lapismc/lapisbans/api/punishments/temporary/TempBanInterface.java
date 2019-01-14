@@ -18,5 +18,8 @@ package net.lapismc.lapisbans.api.punishments.temporary;
 
 import net.lapismc.lapisbans.api.punishments.core.TemporaryPunishmentInterface;
 
+/**
+ * Represents a temporary ban
+ */
 public interface TempBanInterface extends TemporaryPunishmentInterface {
 }

@@ -16,6 +16,9 @@
 
 package net.lapismc.lapisbans.api.punishments.core;
 
+/**
+ * Represents a punishment with an end time
+ */
 public interface TemporaryPunishmentInterface extends PunishmentInterface {
 
     /**

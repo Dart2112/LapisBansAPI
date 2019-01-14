@@ -18,6 +18,9 @@ package net.lapismc.lapisbans.api.punishments.core;
 
 import java.util.UUID;
 
+/**
+ * Represents a punishment applied to a player
+ */
 public interface PunishmentInterface {
 
     /**
