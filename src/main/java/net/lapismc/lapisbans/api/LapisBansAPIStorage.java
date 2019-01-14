@@ -16,18 +16,16 @@
 
 package net.lapismc.lapisbans.api;
 
-import net.lapismc.lapisbans.api.punishments.core.PunishmentInterface;
+public class LapisBansAPIStorage {
 
-import java.util.List;
-import java.util.UUID;
+    private static LapisBansAPI api;
 
-public interface LapisBansAPI {
+    public LapisBansAPIStorage(LapisBansAPI api) {
+        LapisBansAPIStorage.api = api;
+    }
 
-    /*
-    This API is not complete
-    It may take some time to completely implement it
-     */
-
-    List<PunishmentInterface> getAllPunishments(UUID uuid);
+    public static LapisBansAPI getAPI() {
+        return api;
+    }
 
 }

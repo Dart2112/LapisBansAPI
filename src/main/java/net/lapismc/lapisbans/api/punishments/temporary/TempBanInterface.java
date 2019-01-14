@@ -14,20 +14,9 @@
  * limitations under the License.
  */
 
-package net.lapismc.lapisbans.api;
+package net.lapismc.lapisbans.api.punishments.temporary;
 
-import net.lapismc.lapisbans.api.punishments.core.PunishmentInterface;
+import net.lapismc.lapisbans.api.punishments.core.TemporaryPunishmentInterface;
 
-import java.util.List;
-import java.util.UUID;
-
-public interface LapisBansAPI {
-
-    /*
-    This API is not complete
-    It may take some time to completely implement it
-     */
-
-    List<PunishmentInterface> getAllPunishments(UUID uuid);
-
+public interface TempBanInterface extends TemporaryPunishmentInterface {
 }

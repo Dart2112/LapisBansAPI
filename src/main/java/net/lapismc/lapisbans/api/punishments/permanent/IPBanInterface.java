@@ -14,20 +14,18 @@
  * limitations under the License.
  */
 
-package net.lapismc.lapisbans.api;
+package net.lapismc.lapisbans.api.punishments.permanent;
 
 import net.lapismc.lapisbans.api.punishments.core.PunishmentInterface;
 
-import java.util.List;
-import java.util.UUID;
+public interface IPBanInterface extends PunishmentInterface {
 
-public interface LapisBansAPI {
-
-    /*
-    This API is not complete
-    It may take some time to completely implement it
+    /**
+     * Get the IP address that this ban applies to
+     * This is required as {@link #getAppliedTo()} returns a UUID
+     *
+     * @return Returns the IP Address this ban applies to
      */
-
-    List<PunishmentInterface> getAllPunishments(UUID uuid);
+    String getIPAddress();
 
 }
