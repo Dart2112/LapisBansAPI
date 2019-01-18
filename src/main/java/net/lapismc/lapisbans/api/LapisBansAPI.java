@@ -22,14 +22,35 @@ import net.lapismc.lapisbans.api.punishments.core.PunishmentType;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * This is the LapisBansAPI, it can be used to get and create punishments
+ * Methods may be added or removed from this API while LapisBans 2.0.0 is still in Beta
+ */
 public interface LapisBansAPI {
 
-    /*
-    This API is not complete
-    It may take some time to completely implement it
+    /**
+     * Get all punishments applied to a UUID, this includes punishments that have ended e.g. expired temp bans
+     *
+     * @param uuid The UUID of the player you wish to lookup
+     * @return Returns a list of punishments where the {@link PunishmentInterface#getAppliedTo()} is equal to the provided UUID
      */
-
     List<PunishmentInterface> getAllPunishments(UUID uuid);
+
+    /**
+     * Get all currently active punishments applied to a player, this excludes punishments that have ended
+     *
+     * @param uuid The UUID of the player you wish to lookup
+     * @return Returns a list of punishments where the {@link PunishmentInterface#getAppliedTo()} is equal to the provided UUID
+     */
+    List<PunishmentInterface> getAllActivePunishments(UUID uuid);
+
+    /**
+     * Get all punishments applied by a user, these are punishments set by the provided UUID
+     *
+     * @param uuid The UUID of the user you wish to look up
+     * @return Returns a list of punishments where the {@link PunishmentInterface#getAppliedBy()} is equal to the provided UUID
+     */
+    List<PunishmentInterface> getPunishmentsAppliedBy(UUID uuid);
 
     /**
      * Generate and return a punishment
@@ -56,5 +77,10 @@ public interface LapisBansAPI {
      * @return Returns the UUID of the IP address provided
      */
     UUID ipAddressToUUID(String ip);
+
+    /**
+     * Get the UUID of the console, this can be used for {@link #getPunishmentsAppliedBy(UUID)}
+     */
+    UUID getConsoleUUID();
 
 }
