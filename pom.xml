@@ -19,20 +19,67 @@
 
     <groupId>net.lapismc</groupId>
     <artifactId>LapisBansAPI</artifactId>
-    <version>2.0.0-BETA-01</version>
+    <version>2.0.0-BETA-02</version>
     <packaging>jar</packaging>
 
     <name>LapisBansAPI</name>
-
     <description>The API for LapisBans</description>
+
+    <url>https://github.com/Dart2112/LapisBansAPI</url>
+
+    <developers>
+        <developer>
+            <name>Benjamin Martin</name>
+            <email>dart2112@lapismc.net</email>
+            <organization>LapisPlugins</organization>
+            <organizationUrl>http://www.github.com/LapisPlugins</organizationUrl>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/Dart2112/LapisBansAPI.git</connection>
+        <developerConnection>scm:git:ssh://github.com:Dart2112/LapisBansAPI.git</developerConnection>
+        <url>http://github.com/Dart2112/LapisBansAPI/tree/master</url>
+    </scm>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <defaultGoal>clean install</defaultGoal>
         <finalName>${project.name}</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -53,6 +100,35 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <keyname>${gpg.keyname}</keyname>
+                    <passphrase>${gpg.passphrase}</passphrase>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
         </plugins>
