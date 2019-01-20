@@ -1,9 +1,20 @@
 # LapisBansAPI
 The API for my premium resource LapisBans
 
-# How to use
+## Getting the API
 
-Compile the API and install it using the command "mvn clean install" in the root directory
+The LapisBansAPI is on Maven Central.
+Simply use the LapisBansAPI dependency and Maven will fetch the API
+
+```
+<dependency>
+  <groupId>net.lapismc</groupId>
+  <artifactId>LapisBansAPI</artifactId>
+  <version>2.0.0-BETA-02</version>
+</dependency>
+```
+
+## How to use
 
 Use LapisBansAPIStorage.getAPI(); to get the API class
 
