@@ -80,6 +80,7 @@ public interface LapisBansAPI {
 
     /**
      * Get the UUID of the console, this can be used for {@link #getPunishmentsAppliedBy(UUID)}
+     * @return UUID of console
      */
     UUID getConsoleUUID();
 
