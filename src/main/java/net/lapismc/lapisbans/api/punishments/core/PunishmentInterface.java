@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Benjamin Martin
+ * Copyright 2020 Benjamin Martin
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,6 +85,14 @@ public interface PunishmentInterface {
      * @return The action this punishment takes
      */
     String getActioned();
+
+    /**
+     * Returns the undoing action for this punishment e.g. Ban would return Unbanned
+     * This is used for the pardon message announcement
+     *
+     * @return The undoing action for this punishment
+     */
+    String getUndo();
 
     /**
      * Returns the name of the punishment, e.g. Ban would return Ban
