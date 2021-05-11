@@ -10,7 +10,7 @@ Simply use the LapisBansAPI dependency and Maven will fetch the API
 <dependency>
   <groupId>net.lapismc</groupId>
   <artifactId>LapisBansAPI</artifactId>
-  <version>2.0.0-BETA-02</version>
+  <version>2.0.7</version>
 </dependency>
 ```
 
