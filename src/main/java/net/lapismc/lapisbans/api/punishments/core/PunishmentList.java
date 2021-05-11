@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Benjamin Martin
+ * Copyright 2021 Benjamin Martin
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import java.util.List;
  */
 public class PunishmentList {
 
-    private List<Object> list;
+    private final List<Object> list;
 
     /**
      * Setup the list

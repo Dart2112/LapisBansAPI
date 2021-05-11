@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Benjamin Martin
+ * Copyright 2021 Benjamin Martin
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import net.lapismc.lapiscore.events.LapisCoreCancellableEvent;
 
 public class LapisBansPunishEvent extends LapisCoreCancellableEvent {
 
-    private PunishmentInterface punishment;
+    private final PunishmentInterface punishment;
 
     public LapisBansPunishEvent(PunishmentInterface punishment) {
         this.punishment = punishment;

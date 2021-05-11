@@ -32,21 +32,21 @@
             <name>Benjamin Martin</name>
             <email>dart2112@lapismc.net</email>
             <organization>LapisPlugins</organization>
-            <organizationUrl>http://www.github.com/LapisPlugins</organizationUrl>
+            <organizationUrl>https://www.github.com/LapisPlugins</organizationUrl>
         </developer>
     </developers>
 
     <licenses>
         <license>
             <name>The Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
 
     <scm>
         <connection>scm:git:git://github.com/Dart2112/LapisBansAPI.git</connection>
         <developerConnection>scm:git:ssh://github.com:Dart2112/LapisBansAPI.git</developerConnection>
-        <url>http://github.com/Dart2112/LapisBansAPI/tree/master</url>
+        <url>https://github.com/Dart2112/LapisBansAPI/tree/master</url>
     </scm>
 
     <properties>
