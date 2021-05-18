@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    compile 'net.lapismc:LapisCore:1.8.0'
+    compileOnly 'net.lapismc:LapisCore:1.8.1'
     compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
 }
 
