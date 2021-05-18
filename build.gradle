@@ -24,10 +24,10 @@ plugins {
 
 group = 'net.lapismc'
 archivesBaseName = "LapisBansAPI"
-version = '2.0.9'
+version = '2.1.0'
 description = 'The API for LapisBans'
-sourceCompatibility = '1.11'
-targetCompatibility = '1.11'
+sourceCompatibility = '11'
+targetCompatibility = '11'
 
 repositories {
     mavenCentral()
@@ -35,10 +35,6 @@ repositories {
     //Spigot Repo
     maven {
         url = uri('https://hub.spigotmc.org/nexus/content/groups/public/')
-    }
-    //Essentials Repo
-    maven {
-        url = uri('https://repo.essentialsx.net/releases/')
     }
 }
 
