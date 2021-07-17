@@ -24,7 +24,7 @@ plugins {
 
 group = 'net.lapismc'
 archivesBaseName = "LapisBansAPI"
-version = '2.1.0'
+version = '2.1.1'
 description = 'The API for LapisBans'
 sourceCompatibility = '11'
 targetCompatibility = '11'
@@ -39,8 +39,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'net.lapismc:LapisCore:1.8.1'
-    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
+    compileOnly 'net.lapismc:LapisCore:1.8.2'
+    compileOnly 'org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT'
 }
 
 task javadocJar(type: Jar) {
