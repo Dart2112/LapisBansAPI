@@ -16,22 +16,23 @@
 
 plugins {
     id 'java'
-    id 'maven'
-    id 'signing'
-    id "com.github.johnrengelman.shadow" version "5.2.0"
-    id 'io.codearte.nexus-staging' version '0.30.0'
+    id 'maven-publish'
 }
 
 group = 'net.lapismc'
 archivesBaseName = "LapisBansAPI"
-version = '2.1.3'
+version = '2.1.4'
 description = 'The API for LapisBans'
-sourceCompatibility = '11'
-targetCompatibility = '11'
+sourceCompatibility = '17'
+targetCompatibility = '17'
 
 repositories {
     mavenCentral()
-    mavenLocal()
+    //Personal Repo
+    maven {
+        name = "lapismc-repo"
+        url = "https://maven.lapismc.net/repository/maven/"
+    }
     //Spigot Repo
     maven {
         url = uri('https://hub.spigotmc.org/nexus/content/groups/public/')
@@ -39,8 +40,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'net.lapismc:LapisCore:1.12.0'
-    compileOnly 'org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT'
+    compileOnly 'net.lapismc:LapisCore:1.12.17'
+    compileOnly 'org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT'
 }
 
 task javadocJar(type: Jar) {
@@ -57,59 +58,28 @@ artifacts {
     archives javadocJar, sourcesJar
 }
 
-signing {
-    useGpgCmd()
-    sign configurations.archives
-}
-
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-nexusStaging {
-    packageGroup = "net.lapismc" //optional if packageGroup == project.getGroup()
+java {
+    withSourcesJar()
+    withJavadocJar()
 }
 
-uploadArchives {
+publishing {
+    publications {
+        shadow(MavenPublication) {
+            from components.java
+        }
+    }
     repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                name = project.archivesBaseName
-                packaging 'jar'
-                // optionally artifactId can be defined here
-                description = project.description
-                url 'https://github.com/Dart2112/LapisBansAPI'
-
-                scm {
-                    connection 'git@github.com:Dart2112/LapisBansAPI.git'
-                    developerConnection 'git@github.com:Dart2112/LapisBansAPI.git'
-                    url 'https://github.com/Dart2112/LapisBansAPI'
-                }
-
-                licenses {
-                    license {
-                        name 'The Apache License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-
-                developers {
-                    developer {
-                        id 'Dart2112'
-                        name 'Benjamin Martin'
-                        email 'dart2112@lapismc.net'
-                    }
-                }
+        maven {
+            name 'nexus'
+            url "https://nexus.dnablue2112.com/repository/maven-releases/"
+            credentials {
+                username repoUser
+                password repoPassword
             }
         }
     }

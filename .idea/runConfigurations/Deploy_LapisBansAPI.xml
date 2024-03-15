@@ -12,8 +12,7 @@
         <list>
           <option value="clean" />
           <option value="build" />
-          <option value="uploadArchives" />
-          <option value="closeAndReleaseRepository" />
+          <option value="deploy" />
         </list>
       </option>
       <option name="vmOptions" value="" />
@@ -21,6 +20,7 @@
     <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
     <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
     <DebugAllEnabled>false</DebugAllEnabled>
+    <RunAsTest>false</RunAsTest>
     <method v="2" />
   </configuration>
 </component>
