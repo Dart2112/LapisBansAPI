@@ -20,11 +20,8 @@ plugins {
 }
 
 group = 'net.lapismc'
-archivesBaseName = "LapisBansAPI"
-version = '2.1.4'
+version = '2.1.5'
 description = 'The API for LapisBans'
-sourceCompatibility = '21'
-targetCompatibility = '21'
 
 repositories {
     mavenCentral()
@@ -40,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'net.lapismc:LapisCore:1.13.11'
+    compileOnly 'net.lapismc:LapisCore:1.13.12'
     compileOnly 'org.spigotmc:spigot-api:26.1.2-R0.1-SNAPSHOT'
 }
 
