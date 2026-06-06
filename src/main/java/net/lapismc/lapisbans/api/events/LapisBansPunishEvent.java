@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Benjamin Martin
+ * Copyright 2026 Benjamin Martin
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,28 @@ package net.lapismc.lapisbans.api.events;
 import net.lapismc.lapisbans.api.punishments.core.PunishmentInterface;
 import net.lapismc.lapiscore.events.LapisCoreCancellableEvent;
 
+/**
+ * Cancellable event that is triggered when a punishment is being applied
+ * Cancelling the event will notify the user with the reason you provide
+ */
 public class LapisBansPunishEvent extends LapisCoreCancellableEvent {
 
     private final PunishmentInterface punishment;
 
+    /**
+     * Sets the punishment that this event is tracking
+     *
+     * @param punishment The punishment being applied
+     */
     public LapisBansPunishEvent(PunishmentInterface punishment) {
         this.punishment = punishment;
     }
 
+    /**
+     * Get the punishment that this event is tracking
+     *
+     * @return a punishment object detailing the punishment being applied
+     */
     public PunishmentInterface getPunishment() {
         return punishment;
     }
