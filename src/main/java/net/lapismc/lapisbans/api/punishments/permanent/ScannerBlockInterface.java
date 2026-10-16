@@ -21,5 +21,5 @@ import net.lapismc.lapisbans.api.punishments.core.PunishmentInterface;
 /**
  * Represents a scanner not being allowed to join the server
  */
-public interface ScannerBlock extends PunishmentInterface {
+public interface ScannerBlockInterface extends PunishmentInterface {
 }
