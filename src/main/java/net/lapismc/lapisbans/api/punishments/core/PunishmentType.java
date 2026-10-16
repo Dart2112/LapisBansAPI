@@ -27,6 +27,7 @@ public enum PunishmentType {
     Ban,
     /**
      * Kicks are instantaneous and therefore a player may have multiple of these
+     * Kicks are also used when scanners are blocked from joining the server
      */
     Kick,
     /**

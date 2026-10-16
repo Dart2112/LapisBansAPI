@@ -20,7 +20,7 @@ plugins {
 }
 
 group = 'net.lapismc'
-version = '2.1.7'
+version = '2.1.8'
 description = 'The API for LapisBans'
 
 repositories {
